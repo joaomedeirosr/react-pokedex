@@ -13,7 +13,7 @@ export default function Home() {
       "https://pokeapi.co/api/v2/pokemon/" + codigo
     );
 
-    setPokemon(resultado.data);
+    setPokemon(resultado.data, resultado.data.species.name);
   }
   return (
     <div class="col-lg-8 mx-auto p-3 py-md-5">
@@ -33,7 +33,7 @@ export default function Home() {
         </div>
         <hr class="col-3 col-md-2 mb-5" />
 
-        <div class="row g-5"> {pokemon ? <Card /> : ""}</div>
+        <div class="row g-5"> {pokemon ? <Card pokemons={pokemon} /> : ""}</div>
       </main>
       <Footer />
     </div>
